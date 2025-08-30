@@ -13,5 +13,8 @@ def analyze(request: TextRequest):
     return result
 
 if __name__ == "__main__":
+    import sys
+    import os
+    sys.path.append(os.path.dirname(os.path.abspath(__file__)))
     import uvicorn
-    uvicorn.run("ml.app.api:api", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("api:api", host="0.0.0.0", port=8000, reload=True)
